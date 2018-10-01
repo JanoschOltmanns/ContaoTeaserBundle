@@ -1,0 +1,43 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('headline'); ?>
+
+<?php $this->endblock(); ?>
+
+<?php $this->block('content'); ?>
+
+  <div class="teaser-layer teaser-layer--background" id="teaser_bg_<?= $this->id ?>">
+
+    <div class="teaser-overlay" <?= \JanoschOltmanns\ContaoDataAttributesBundle\DataAttributesContentElement::getDataAttributes($this->arrData); ?>>
+        <?php if ($this->headline): ?>
+        <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+      <?php endif; ?>
+      <?php if ($this->subHeadline): ?>
+        <<?= $this->subHl ?>><?= $this->subHeadline ?></<?= $this->subHl ?>>
+      <?php endif; ?>
+
+      <?php if ($this->text): ?>
+        <?= $this->text ?>
+      <?php endif; ?>
+
+      <?php if ($this->addLink): ?>
+        <?= $this->embed_pre ?>
+        <a href="<?= $this->href ?>" class="hyperlink_txt" title="<?= $this->linkTitle ?>"<?= $this->attribute ?><?= $this->target ?>><?= $this->link ?></a>
+        <?= $this->embed_post ?>
+      <?php endif; ?>
+    </div>
+
+    <?php if ($this->photographer || $this->copyright): ?>
+      <div class="image_copyrights">
+        <?php if ($this->photographer): ?><span class="image_copyrights_photographer"><?= $this->photographer ?></span><br><?php endif; ?>
+        <?php if ($this->copyright): ?><span class="image_copyrights_copyright">&copy;&nbsp;<?= $this->copyright ?></span><?php endif; ?>
+      </div>
+    <?php endif; ?>
+
+    <?php if ($this->addImage): ?>
+        <?php $GLOBALS['TL_HEAD'][] = \Template::generateInlineStyle('#teaser_bg_' .  $this->id . '{background-image:url(' . $this->picture['img']['src'] . ');}') . "\n"; ?>
+    <?php endif; ?>
+
+  </div>
+
+<?php $this->endblock(); ?>

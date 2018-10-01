@@ -1,0 +1,33 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('headline'); ?>
+
+<?php $this->endblock(); ?>
+
+<?php $this->block('content'); ?>
+
+  <div class="teaser-overlay">
+      <?php if ($this->headline): ?>
+      <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+    <?php endif; ?>
+    <?php if ($this->subHeadline): ?>
+      <<?= $this->subHl ?>><?= $this->subHeadline ?></<?= $this->subHl ?>>
+    <?php endif; ?>
+
+    <?php if ($this->text): ?>
+      <?= $this->text ?>
+    <?php endif; ?>
+
+    <?php if ($this->addLink): ?>
+      <?= $this->embed_pre ?>
+      <a href="<?= $this->href ?>" class="hyperlink_txt" title="<?= $this->linkTitle ?>"<?= $this->attribute ?><?= $this->target ?>><?= $this->link ?></a>
+      <?= $this->embed_post ?>
+    <?php endif; ?>
+  </div>
+
+
+  <?php if ($this->addImage): ?>
+    <?php $this->insert('image', $this->arrData); ?>
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>
