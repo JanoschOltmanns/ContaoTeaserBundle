@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the contao data-attributes bundle.
+ * This file is part of the contao teaser bundle.
  *
  * Copyright (c) 2017 Janosch Oltmanns
  *
