@@ -12,6 +12,7 @@ $GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = ['tl_content_t
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = "joAddLinkToTeaser";
 $GLOBALS['TL_DCA']['tl_content']['palettes']['teaserelement'] = '{type_legend},type,headline,joTeaserSubheadline;{text_legend},text;{image_legend},addImage;{link_legend},joAddLinkToTeaser;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['simpleteaserelement'] = '{type_legend},type,headline,joTeaserSubheadline;{image_legend},addImage;{link_legend},joAddLinkToTeaser;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['joAddLinkToTeaser'] = 'url,target,linkTitle,embed,titleText,rel';
 

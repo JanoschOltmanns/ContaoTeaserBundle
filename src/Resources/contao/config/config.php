@@ -9,3 +9,4 @@
 
 
 $GLOBALS['TL_CTE']['texts']['teaserelement'] = 'JanoschOltmanns\ContaoTeaserBundle\ContentJoTeaser';
+$GLOBALS['TL_CTE']['texts']['simpleteaserelement'] = 'JanoschOltmanns\ContaoTeaserBundle\ContentJoSimpleTeaser';
