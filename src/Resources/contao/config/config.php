@@ -8,5 +8,5 @@
  */
 
 
-$GLOBALS['TL_CTE']['texts']['teaserelement'] = 'JanoschOltmanns\ContaoTeaserBundle\ContentJoTeaser';
-$GLOBALS['TL_CTE']['texts']['simpleteaserelement'] = 'JanoschOltmanns\ContaoTeaserBundle\ContentJoSimpleTeaser';
+$GLOBALS['TL_CTE']['texts']['teaserelement'] = JanoschOltmanns\ContaoTeaserBundle\ContentJoTeaser::class;
+$GLOBALS['TL_CTE']['texts']['simpleteaserelement'] = JanoschOltmanns\ContaoTeaserBundle\ContentJoSimpleTeaser::class;

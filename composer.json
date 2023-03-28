@@ -9,8 +9,8 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0",
-    "contao/core-bundle": ">=4.3"
+    "php": "^7.4 || ^8.1",
+    "contao/core-bundle": "^4.13"
   },
   "conflict": {
     "contao/core": "*",
