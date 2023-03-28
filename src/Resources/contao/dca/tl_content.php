@@ -21,8 +21,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['joTeaserSubheadline'] = [
     'exclude'                 => true,
     'search'                  => true,
     'inputType'               => 'inputUnit',
-    'options'                 => array('h2', 'h3', 'h4', 'h5', 'h6'),
-    'eval'                    => array('maxlength'=>200, 'tl_class'=>'w50'),
+    'options'                 => ['h2', 'h3', 'h4', 'h5', 'h6'],
+    'eval'                    => ['maxlength'=>200, 'tl_class'=>'w50'],
     'sql'                     => "varchar(255) NOT NULL default ''"
 ];
 
@@ -30,23 +30,21 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['joAddLinkToTeaser'] = [
     'label'                   => &$GLOBALS['TL_LANG']['tl_content']['joAddLinkToTeaser'],
     'exclude'                 => true,
     'inputType'               => 'checkbox',
-    'eval'                    => array('submitOnChange'=>true),
+    'eval'                    => ['submitOnChange'=>true],
     'sql'                     => "char(1) NOT NULL default ''"
 ];
 
-class tl_content_teaser_bundle extends \Backend {
+class tl_content_teaser_bundle extends \Contao\Backend {
 
     public function contentOnloadCallback($dc) {
 
-        $objCte = \ContentModel::findByPk($dc->id);
+        $objCte = \Contao\ContentModel::findByPk($dc->id);
 
-        if ($objCte === null)
-        {
+        if ($objCte === null) {
             return;
         }
 
-        switch ($objCte->type)
-        {
+        switch ($objCte->type) {
             case 'teaserelement':
                 $GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['mandatory'] = false;
                 break;
