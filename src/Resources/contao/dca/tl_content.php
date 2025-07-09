@@ -7,6 +7,9 @@
  *
  */
 
+use Contao\Backend;
+use Contao\ContentModel;
+
 $GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = ['tl_content_teaser_bundle', 'contentOnloadCallback'];
 
 
@@ -34,11 +37,12 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['joAddLinkToTeaser'] = [
     'sql'                     => "char(1) NOT NULL default ''"
 ];
 
-class tl_content_teaser_bundle extends \Contao\Backend {
+class tl_content_teaser_bundle extends Backend {
 
-    public function contentOnloadCallback($dc) {
+    public function contentOnloadCallback($dc): void
+    {
 
-        $objCte = \Contao\ContentModel::findByPk($dc->id);
+        $objCte = ContentModel::findByPk($dc->id);
 
         if ($objCte === null) {
             return;
