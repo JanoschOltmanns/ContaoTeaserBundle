@@ -4,6 +4,8 @@ namespace JanoschOltmanns\ContaoTeaserBundle;
 
 use Contao\ContentText;
 use Contao\StringUtil;
+use Contao\System;
+use Symfony\Component\HttpFoundation\Request;
 
 class ContentJoTeaser extends ContentText {
 
@@ -17,9 +19,8 @@ class ContentJoTeaser extends ContentText {
 	/**
 	 * Generate the content element
 	 */
-	protected function compile()
-	{
-
+	protected function compile(): void
+    {
         parent::compile();
 
         $arrSubHeadline = StringUtil::deserialize($this->joTeaserSubheadline);
@@ -28,7 +29,7 @@ class ContentJoTeaser extends ContentText {
 
         if ($this->joAddLinkToTeaser) {
 
-            if (strpos($this->url, 'mailto:') === 0) {
+            if (str_starts_with($this->url, 'mailto:')) {
                 $this->url = StringUtil::encodeEmail($this->url);
             } else {
                 $this->url = StringUtil::ampersand($this->url);
@@ -65,7 +66,7 @@ class ContentJoTeaser extends ContentText {
             }
 
             // Unset the title attributes in the back end (see #6258)
-            if (TL_MODE === 'BE') {
+            if (System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest(System::getContainer()->get('request_stack')->getCurrentRequest() ?? Request::create(''))) {
                 $this->Template->title = '';
                 $this->Template->linkTitle = '';
             }

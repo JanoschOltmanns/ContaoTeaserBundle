@@ -15,10 +15,8 @@ class ContentJoSimpleTeaser extends ContentJoTeaser
     /**
      * Generate the content element
      */
-    protected function compile()
+    protected function compile(): void
     {
-
         parent::compile();
-
     }
 }
