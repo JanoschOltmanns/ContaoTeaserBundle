@@ -8,7 +8,7 @@
 
   <div class="teaser-layer teaser-layer--background" id="teaser_bg_<?= $this->id ?>">
 
-    <div class="teaser-overlay" <?= \JanoschOltmanns\ContaoDataAttributesBundle\DataAttributesContentElement::getDataAttributes($this->arrData); ?>>
+    <div class="teaser-overlay">
         <?php if ($this->headline): ?>
         <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
       <?php endif; ?>
@@ -35,7 +35,7 @@
     <?php endif; ?>
 
     <?php if ($this->addImage): ?>
-        <?php $GLOBALS['TL_HEAD'][] = \Template::generateInlineStyle('#teaser_bg_' .  $this->id . '{background-image:url(' . $this->picture['img']['src'] . ');}') . "\n"; ?>
+        <?php $GLOBALS['TL_HEAD'][] = \Contao\Template::generateInlineStyle('#teaser_bg_' .  $this->id . '{background-image:url(' . $this->picture['img']['src'] . ');}') . "\n"; ?>
     <?php endif; ?>
 
   </div>
