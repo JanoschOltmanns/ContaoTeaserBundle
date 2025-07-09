@@ -35,7 +35,7 @@
     <?php endif; ?>
 
     <?php if ($this->addImage): ?>
-        <?php $GLOBALS['TL_HEAD'][] = \Template::generateInlineStyle('#teaser_bg_' .  $this->id . '{background-image:url(' . $this->picture['img']['src'] . ');}') . "\n"; ?>
+        <?php $GLOBALS['TL_HEAD'][] = \Contao\Template::generateInlineStyle('#teaser_bg_' .  $this->id . '{background-image:url(' . $this->picture['img']['src'] . ');}') . "\n"; ?>
     <?php endif; ?>
 
   </div>
